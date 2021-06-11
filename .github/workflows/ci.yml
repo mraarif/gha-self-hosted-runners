@@ -1,0 +1,29 @@
+name: Python CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  run_tests:
+    name: tests
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [self-hosted, linux]
+        python-version: ["3.8"]
+    steps:
+      - uses: actions/checkout@v1
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install pip
+        run: pipenv run python --version
+
+      - name: Run Tests
+        run: py.test tests

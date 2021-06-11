@@ -1,0 +1,14 @@
+# install cert-manager
+kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.3.1/cert-manager.yaml
+
+
+# install actions-runner-controller
+kubectl apply -f https://github.com/actions-runner-controller/actions-runner-controller/releases/download/v0.19.0/actions-runner-controller.yaml
+
+ 
+kubectl create secret generic controller-manager \
+    -n actions-runner-system \
+    --from-literal=github_token=${GITHUB_TOKEN}
+
+ kubectl apply -f runner-deployment.yaml
+ 

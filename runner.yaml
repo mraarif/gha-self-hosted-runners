@@ -1,0 +1,8 @@
+# runner.yaml
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: Runner
+metadata:
+  name: example-runner
+spec:
+  repository: mraarif/gha-self-hosted-runners
+  env: []

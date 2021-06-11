@@ -1,0 +1,12 @@
+# runnerdeployment.yaml
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: example-runnerdeploy
+spec:
+  replicas: 3
+  template:
+    spec:
+      repository: mraarif/gha-self-hosted-runners
+      image: mraarif/gha-self-hosted-runners
+      env: []
