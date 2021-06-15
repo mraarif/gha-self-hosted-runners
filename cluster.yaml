@@ -10,3 +10,6 @@ nodeGroups:
     desiredCapacity: 3
     minSize: 2
     maxSize: 4
+    ssh:
+      allow: true
+      publicKeyName: local-machine-access

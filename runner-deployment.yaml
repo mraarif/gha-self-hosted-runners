@@ -3,10 +3,16 @@ apiVersion: actions.summerwind.dev/v1alpha1
 kind: RunnerDeployment
 metadata:
   name: example-runnerdeploy
+  namespace: actions-runner-system
 spec:
   replicas: 3
   template:
     spec:
       repository: mraarif/gha-self-hosted-runners
-      image: mraarif/gha-self-hosted-runners
-      env: []
+      # image: mraarif/gha-self-hosted-runners
+      env:
+        - name: GITHUB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: controller-manager
+              key: github_token
