@@ -30,5 +30,6 @@ jobs:
       - name: Run Tests
         run: |
           ls -a
+          cd ~/app
           pwd
           pipenv run py.test tests
