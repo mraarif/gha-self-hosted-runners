@@ -24,11 +24,11 @@ jobs:
 
       - name: Install pip
         run: |
-          pipenv run python --version
+          sudo pipenv run python --version
 
       - name: Run Tests
         run: |
           ls -a
           cd ~/app
           pwd
-          pipenv run py.test tests
+          sudo pipenv run py.test tests
