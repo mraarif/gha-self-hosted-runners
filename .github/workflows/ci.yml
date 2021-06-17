@@ -29,6 +29,5 @@ jobs:
       - name: Run Tests
         run: |
           ls -a
-          cd ~/app
           pwd
           sudo pipenv run py.test tests
