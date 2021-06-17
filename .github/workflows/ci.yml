@@ -24,7 +24,6 @@ jobs:
 
       - name: Install pip
         run: |
-          pip install pipenv
           pipenv run python --version
 
       - name: Run Tests
