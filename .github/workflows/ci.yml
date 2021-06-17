@@ -23,7 +23,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install pip
-        run: pipenv run python --version
+        run: |
+          pip install pipenv
+          pipenv run python --version
 
       - name: Run Tests
         run: |
