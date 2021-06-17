@@ -1,7 +1,6 @@
-FROM summerwind/actions-runner-controller:v0.18.2 AS builder
+FROM summerwind/actions-runner:v2.278.0-ubuntu-20.04
 
-
-FROM ubuntu:20.04
+USER root
 
 RUN apt-get update -y && \
 	apt-get install -y python3-pip python3-dev
@@ -12,10 +11,6 @@ COPY . /app
 
 RUN pip3 install pipenv && pipenv install
 
-EXPOSE 8080
+USER runner
 
-COPY --from=builder . /manager
-
-WORKDIR /manager
-
-ENTRYPOINT ["/manager/manager"]
+CMD ["/entrypoint.sh"]

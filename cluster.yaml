@@ -7,9 +7,9 @@ metadata:
 nodeGroups:
   - name: github-workers
     instanceType: t3.medium
-    desiredCapacity: 3
-    minSize: 2
-    maxSize: 4
+    desiredCapacity: 6
+    minSize: 4
+    maxSize: 10
     ssh:
       allow: true
       publicKeyName: aarifs-access-key
