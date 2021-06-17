@@ -31,5 +31,4 @@ jobs:
         run: |
           ls -a
           pwd
-          cd ~/app
           pipenv run py.test tests

@@ -9,7 +9,7 @@ spec:
   template:
     spec:
       repository: mraarif/gha-self-hosted-runners
-      # image: mraarif/gha-self-hosted-runners
+      image: mraarif/gha-self-hosted-runners
       env:
         - name: GITHUB_TOKEN
           valueFrom:
