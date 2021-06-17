@@ -26,4 +26,6 @@ jobs:
         run: pipenv run python --version
 
       - name: Run Tests
-        run: py.test tests
+        run: |
+          cd ../app
+          pipenv run py.test tests

@@ -1,3 +1,6 @@
+FROM summerwind/actions-runner-controller:v0.18.2 AS builder
+
+
 FROM ubuntu:20.04
 
 RUN apt-get update -y && \
@@ -11,4 +14,8 @@ RUN pip3 install pipenv && pipenv install
 
 EXPOSE 8080
 
-CMD ["pipenv", "run", "python", "app.py"]
+COPY --from=builder . /manager
+
+WORKDIR /manager
+
+ENTRYPOINT ["/manager/manager"]

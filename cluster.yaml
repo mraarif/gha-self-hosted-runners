@@ -5,11 +5,11 @@ metadata:
   name: gha-cluster
   region: us-west-2
 nodeGroups:
-  - name: capstone-workers
+  - name: github-workers
     instanceType: t3.medium
     desiredCapacity: 3
     minSize: 2
     maxSize: 4
     ssh:
       allow: true
-      publicKeyName: local-machine-access
+      publicKeyName: aarifs-access-key
