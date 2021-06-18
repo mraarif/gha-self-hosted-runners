@@ -15,7 +15,7 @@ jobs:
       matrix:
         os: [self-hosted]
         python-version: ["3.8"]
-        tests_module: ["tests.py", "tests_1.py", "tests_2.py"]
+        tests_module: ["tests/tests.py", "tests/tests_1.py", "tests/tests_2.py"]
     steps:
       - uses: actions/checkout@v1
       - name: setup python
